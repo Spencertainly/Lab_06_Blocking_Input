@@ -10,14 +10,20 @@ public class CtoFConverter {
         //prompt user with question
         do {
             System.out.print("Enter temperature in Celsius");
-            if (scanner.hasNextDouble()) ;
-            celsius = scanner.nextDouble();
-            validInput = true;
+            if (scanner.hasNextDouble()) {
+                celsius = scanner.nextDouble();
+                validInput = true;
 
-        } else { // Incorrect input message read to invalid entries
-            System.out.println("Invalid input, please enter a valid input");
-            scanner.next(); //takes response to prevent looping
-            celsius = 0; // placeholder
+            } else { // Incorrect input message read to invalid entries
+                System.out.println("Invalid input, please enter a valid input");
+                scanner.next(); //takes response to prevent looping
+                celsius = 0; // placeholder
+            }
         }
-        while (!validInput);
-}
+            while (!validInput) ;
+            double fahrenheit = (celsius * 9 / 5) + 32;
+            System.out.println("Temperature in Fahrenheit is: " + fahrenheit);
+
+            scanner.close();
+        }
+    }
